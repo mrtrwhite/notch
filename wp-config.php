@@ -16,7 +16,7 @@
 
 require_once('vendor/autoload.php');
 
-if(!file_exists('.env')) { echo '.env file does not exist!'; }
+if(!file_exists("{$_SERVER['DOCUMENT_ROOT']}/.env")) { echo '.env file does not exist!'; }
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
@@ -41,7 +41,12 @@ $table_prefix  = 'wp_';
  * Set debug constants.
  */
 define('WP_DEBUG', $_ENV['WP_DEBUG']);
+define('WP_DEBUG_LOG', $_ENV['WP_DEBUG']);
 define('WP_DEBUG_DISPLAY', $_ENV['WP_DEBUG_DISPLAY']);
+
+if($_ENV['WP_ENV'] === 'development' || $_ENV['WP_ENV'] === 'staging') {
+    error_reporting(E_ERROR);
+}
 
 /*
  * Define content paths.
@@ -52,20 +57,20 @@ define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins');
 define('WP_PLUGIN_URL', $wpsite . '/wp-content/plugins');
 define('PLUGINDIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins');
 define('UPLOADS', '/wp-content/uploads');
-
+define('WP_DEFAULT_THEME', $_ENV['WP_THEME']);
 
 /**
  * Keys & salts.
  * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
  */
-define('AUTH_KEY',         '');
-define('SECURE_AUTH_KEY',  '');
-define('LOGGED_IN_KEY',    '');
-define('NONCE_KEY',        '');
-define('AUTH_SALT',        '');
-define('SECURE_AUTH_SALT', '');
-define('LOGGED_IN_SALT',   '');
-define('NONCE_SALT',       '');
+define('AUTH_KEY',         '*nj%$b[rIeAG;4=bE+0{;;}xTE?9+GSi|$qo?a-Pm`5|?,vFn@d-`+3A`d0|T63C');
+define('SECURE_AUTH_KEY',  'Adk5.!xRO%3!+vzhby)9:PZM/RQBXU$F5FSsgmhfN{-=&A$*7+v.X9nV.mS9X1f]');
+define('LOGGED_IN_KEY',    '*dO-Hgnu(xY#Fo*M_f|/wb]]O<%hTNrQ5j+o|Hh6,m`-F{013fbhc1Q:-IWrbmN#');
+define('NONCE_KEY',        '}=w7h+Wj!]l<;?ke;d_1jlgtL$z0+l*Nyhd.5nx{)^Y;,*Be<I-I*qW(?qbMSPOy');
+define('AUTH_SALT',        'v QFxa0Je|D)l4qJ8</p-bJIw@u-`dk}gkPuEM/c7SkT=|xP}nd|p7bnL:SjM+ l');
+define('SECURE_AUTH_SALT', '<}Fp1Z8z/do-];VO,fG:%WG>5JJA-qSd;(cq7ugX-v3|?!Wr;J&E8J w&s):(KR:');
+define('LOGGED_IN_SALT',   'Z0b0!6|J1-XwHR+Q;Qx|%3Tt5bqz`6?Bh xlD=o$.U&->OVZ`^#*I xZ9ya4[;{$');
+define('NONCE_SALT',       '|.8]z0]$C-dpedLE8Q|cD4|mg;EoW7$hhrE<z<J=5sJfpyPzQQ=v#u^2w+moc7)*');
 
 /*
  * Absolute path to the WordPress directory.
