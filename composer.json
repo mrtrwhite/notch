@@ -1,0 +1,28 @@
+{
+    "name" : "trwhite/notch",
+    "description" : "A component-driven WordPress framework.",
+    "authors" : [
+        {
+            "name" : "Tim White",
+            "email" : "tr.white@outlook.com",
+            "homepage" : "https://timwhite.digital/"
+        }
+    ],
+    "type" : "project",
+    "repositories" : [
+        {
+            "type" : "composer",
+            "url"  : "https://wpackagist.org"
+        }
+    ],
+    "config" : {
+        "vendor-dir" : "vendor"
+    },
+    "require" : {
+        "johnpbloch/wordpress": "*",
+		"wpackagist-plugin/timber-library": "*"
+    },
+    "extra" : {
+        "wordpress-install-dir": "wp"
+    }
+}

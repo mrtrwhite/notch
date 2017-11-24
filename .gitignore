@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+node_modules
+wp
+wp-content/plugins
+wp-content/languages
+wp-content/upgrade
+wp-content/debug.log
+vendor
+composer.lock
+.env
