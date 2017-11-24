@@ -20,7 +20,8 @@
     },
     "require" : {
         "johnpbloch/wordpress": "*",
-		"wpackagist-plugin/timber-library": "*"
+		"wpackagist-plugin/timber-library": "*",
+        "vlucas/phpdotenv": "^2.4"
     },
     "extra" : {
         "wordpress-install-dir": "wp"

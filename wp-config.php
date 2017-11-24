@@ -14,44 +14,24 @@
  * @package WordPress
  */
 
-define('WP_ENV', 'dev');
+require_once('vendor/autoload.php');
 
-if(WP_ENV === 'dev') {
-    $dbname             = 'notch';
-    $dbuser             = 'notch';
-    $dbpass             = '2@gSI0mb8J!p';
-    $dbhost             = 'localhost';
-    $wpsite             = 'http://notch.local';
-    $wpdebug            = true;
-    $wpdebug_display    = true;
+if(!file_exists('.env')) { echo '.env file does not exist!'; }
 
-} else if(WP_ENV === 'staging') {
-    $dbname             = '';
-    $dbuser             = '';
-    $dbpass             = '';
-    $dbhost             = '';
-    $wpsite             = '';
-    $wpdebug            = true;
-    $wpdebug_display    = true;
-} else {
-    $dbname             = '';
-    $dbuser             = '';
-    $dbpass             = '';
-    $dbhost             = '';
-    $wpsite             = '';
-    $wpdebug            = false;
-    $wpdebug_display    = false;
-}
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+define('WP_ENV', $_ENV['WP_ENV']);
 
 /*
  * Define database credentials.
  */
-define('DB_NAME', $dbname);
-define('DB_USER', $dbuser);
-define('DB_PASSWORD', $dbpass);
-define('DB_HOST', $dbhost);
-define('WP_SITEURL', $wpsite . '/wp');
-define('WP_HOME', $wpsite);
+define('DB_NAME', $_ENV['DB_NAME']);
+define('DB_USER', $_ENV['DB_USER']);
+define('DB_PASSWORD', $_ENV['DB_PASS']);
+define('DB_HOST', $_ENV['DB_HOST']);
+define('WP_SITEURL', $_ENV['WP_SITE'] . '/wp');
+define('WP_HOME', $_ENV['WP_SITE']);
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
@@ -60,8 +40,8 @@ $table_prefix  = 'wp_';
 /*
  * Set debug constants.
  */
-define('WP_DEBUG', $wpdebug);
-define('WP_DEBUG_DISPLAY', $wpdebug_display);
+define('WP_DEBUG', $_ENV['WP_DEBUG']);
+define('WP_DEBUG_DISPLAY', $_ENV['WP_DEBUG_DISPLAY']);
 
 /*
  * Define content paths.
