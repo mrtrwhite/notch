@@ -10,17 +10,20 @@ var paths = {
     'sass': {
         'entry': './wp-content/themes/' + process.env.WP_THEME + '/assets/sass/main.scss',
     },
+    'proxy': '/wp-content/themes/' + process.env.WP_THEME + '/inc/js/app.js',
     'output': './wp-content/themes/' + process.env.WP_THEME + '/inc/'
 }
 
 module.exports = {
     entry: [
+        'webpack-hot-middleware/client?reload=true',
         paths.js.entry,
         paths.sass.entry
     ],
     output: {
         path: path.resolve(__dirname, paths.output),
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        // publicPath: 'http://localhost:3000/wp-content/themes/' + process.env.WP_THEME + '/inc/js/'
     },
     module: {
         rules: [
@@ -37,10 +40,34 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        quiet: false,
+        stats: { colors: true },
+        proxy: {
+            '*': {
+                target: {
+                    'host': process.env.WP_SITE.replace(/(^\w+:|^)\/\//, ''),
+                    'protocol': 'http:',
+                    'port': 80
+                },
+                secure: false,
+                ignorePath: false,
+                changeOrigin: true
+            }
+        },
+        inline: true,
+        hot: true,
+    },
     plugins: [
         new ExtractTextPlugin({
             filename: 'css/app.css',
             allChunks: true
         }),
+        new webpack.ProvidePlugin({
+		    '$': 'jquery',
+		    'jQuery': 'jquery',
+		    'window.jQuery': 'jquery'
+		}),
+        new webpack.HotModuleReplacementPlugin()
     ],
 }

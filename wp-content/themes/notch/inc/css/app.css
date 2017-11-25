@@ -3800,10 +3800,6 @@ button,
   cursor: not-allowed;
 }
 
-.custom-error-yo {
-  color: #222b2f;
-}
-
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
