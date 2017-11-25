@@ -1,4 +1,14 @@
 #!/usr/bin/env php
 <?php
 
-echo 'Hello World!';
+if(!empty($argv[1]) && strpos($argv[1], 'make') !== false) {
+    $scaffold_args = explode(':', $argv[1]);
+
+    if(!empty($scaffold_args[1])) {
+        if($scaffold_args[1] === 'theme' && !empty($argv[2])) {
+            echo "{$argv[2]} theme built!\n";
+        }
+    }
+}
+
+exit();
