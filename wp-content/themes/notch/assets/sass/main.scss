@@ -1,7 +1,5 @@
-@tailwind preflight;
-
-@tailwind utilities;
+@import 'tailwind.scss';
 
 body {
-    background-color: blue;
+    @apply .bg-grey .text-white .w-full;
 }

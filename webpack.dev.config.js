@@ -63,6 +63,7 @@ module.exports = {
 		    'jQuery': 'jquery',
 		    'window.jQuery': 'jquery'
 		}),
+        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
 }
