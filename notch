@@ -1,6 +1,15 @@
 #!/usr/bin/env php
 <?php
 
+if(empty($argv[1]) || (!empty($argv[2]) && $argv[2] === 'list')) {
+    echo "\n";
+    echo "Notch, v0.1 \n\n";
+    echo "Available commands:\n";
+    echo "   serve - Start the development server and task runner.\n";
+    echo "   make:theme - Scaffold a new theme.\n";
+    echo "\n";
+}
+
 if(!empty($argv[1]) && strpos($argv[1], 'make') !== false) {
     $scaffold_args = explode(':', $argv[1]);
 
