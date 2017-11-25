@@ -21,7 +21,8 @@
     "require" : {
         "johnpbloch/wordpress": "*",
 		"wpackagist-plugin/timber-library": "*",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "symfony/process": "^3.3"
     },
     "extra" : {
         "wordpress-install-dir": "wp"

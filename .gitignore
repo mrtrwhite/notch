@@ -9,3 +9,4 @@ wp-content/debug.log
 vendor
 composer.lock
 .env
+npm-debug.log

@@ -10,26 +10,25 @@ var paths = {
     'sass': {
         'entry': './wp-content/themes/' + process.env.WP_THEME + '/assets/sass/main.scss',
     },
-    'proxy': '/wp-content/themes/' + process.env.WP_THEME + '/inc/js/app.js',
-    'output': './wp-content/themes/' + process.env.WP_THEME + '/inc/'
+    'output': './wp-content/themes/' + process.env.WP_THEME + '/inc/',
+    'publicPath': '/wp-content/themes/' + process.env.WP_THEME + '/inc/'
 }
 
 module.exports = {
     entry: [
-        'webpack-hot-middleware/client?reload=true',
         paths.js.entry,
         paths.sass.entry
     ],
     output: {
         path: path.resolve(__dirname, paths.output),
         filename: 'js/bundle.js',
-        // publicPath: 'http://localhost:3000/wp-content/themes/' + process.env.WP_THEME + '/inc/js/'
+        publicPath: paths.publicPath
     },
     module: {
         rules: [
             {
                 test: /\.s[ac]ss$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'postcss-loader', 'sass-loader'])
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
                 test: /\.js$/,
@@ -56,13 +55,9 @@ module.exports = {
             }
         },
         inline: true,
-        hot: true,
+        hot: true
     },
     plugins: [
-        new ExtractTextPlugin({
-            filename: 'css/app.css',
-            allChunks: true
-        }),
         new webpack.ProvidePlugin({
 		    '$': 'jquery',
 		    'jQuery': 'jquery',

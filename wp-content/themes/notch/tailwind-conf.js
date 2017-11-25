@@ -190,38 +190,12 @@ module.exports = {
 
     fonts: {
         'sans': [
-            '-apple-system',
-            'BlinkMacSystemFont',
-            'Segoe UI',
             'Roboto',
             'Oxygen',
-            'Ubuntu',
-            'Cantarell',
-            'Fira Sans',
-            'Droid Sans',
-            'Helvetica Neue',
-            'sans-serif',
+            'sans-serif'
         ],
-        'serif': [
-            'Constantia',
-            'Lucida Bright',
-            'Lucidabright',
-            'Lucida Serif',
-            'Lucida',
-            'DejaVu Serif',
-            'Bitstream Vera Serif',
-            'Liberation Serif',
-            'Georgia',
-            'serif',
-        ],
-        'mono': [
-            'Menlo',
-            'Monaco',
-            'Consolas',
-            'Liberation Mono',
-            'Courier New',
-            'monospace',
-        ]
+        'serif': [],
+        'mono': []
     },
 
     /*
@@ -270,15 +244,9 @@ module.exports = {
     */
 
     fontWeights: {
-        'hairline': 100,
-        'thin': 200,
         'light': 300,
         'normal': 400,
-        'medium': 500,
-        'semibold': 600,
-        'bold': 700,
-        'extrabold': 800,
-        'black': 900,
+        'bold': 700
     },
 
     /*
@@ -434,20 +402,6 @@ module.exports = {
 
     width: {
         'auto': 'auto',
-        'px': '1px',
-        '1': '0.25rem',
-        '2': '0.5rem',
-        '3': '0.75rem',
-        '4': '1rem',
-        '6': '1.5rem',
-        '8': '2rem',
-        '10': '2.5rem',
-        '12': '3rem',
-        '16': '4rem',
-        '24': '6rem',
-        '32': '8rem',
-        '48': '12rem',
-        '64': '16rem',
         '1/2': '50%',
         '1/3': '33.33333%',
         '2/3': '66.66667%',
@@ -480,20 +434,6 @@ module.exports = {
 
     height: {
         'auto': 'auto',
-        'px': '1px',
-        '1': '0.25rem',
-        '2': '0.5rem',
-        '3': '0.75rem',
-        '4': '1rem',
-        '6': '1.5rem',
-        '8': '2rem',
-        '10': '2.5rem',
-        '12': '3rem',
-        '16': '4rem',
-        '24': '6rem',
-        '32': '8rem',
-        '48': '12rem',
-        '64': '16rem',
         'full': '100%',
         'screen': '100vh'
     },
@@ -553,16 +493,7 @@ module.exports = {
     */
 
     maxWidth: {
-        'xs': '20rem',
-        'sm': '30rem',
-        'md': '40rem',
-        'lg': '50rem',
-        'xl': '60rem',
-        '2xl': '70rem',
-        '3xl': '80rem',
-        '4xl': '90rem',
-        '5xl': '100rem',
-        'full': '100%',
+        'full': '100%'
     },
 
     /*
@@ -703,11 +634,11 @@ module.exports = {
     zIndex: {
         'auto': 'auto',
         '0': 0,
-        '10': 10,
-        '20': 20,
-        '30': 30,
-        '40': 40,
-        '50': 50,
+        '1': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '5': 5,
     },
 
     /*
