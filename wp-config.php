@@ -16,7 +16,7 @@
 
 require_once('vendor/autoload.php');
 
-if(!file_exists("{$_SERVER['DOCUMENT_ROOT']}/.env")) { echo '.env file does not exist!'; }
+// if(!file_exists("{$_SERVER['DOCUMENT_ROOT']}/.env")) { '.env file does not exist!'; }
 
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();

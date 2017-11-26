@@ -1,0 +1,6 @@
+color: true
+require:
+  - cli/migrate.php
+  - cli/serve.php
+  - cli/build.php
+  - cli/make.php
