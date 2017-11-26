@@ -18,4 +18,4 @@ $serve = function($args, $assoc_args) {
     });
 };
 
-WP_CLI::add_command('serve', $serve);
+WP_CLI::add_command('notch serve', $serve);

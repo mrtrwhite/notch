@@ -18,4 +18,4 @@ $build = function($args, $assoc_args) {
     });
 };
 
-WP_CLI::add_command('build', $build);
+WP_CLI::add_command('notch build', $build);
