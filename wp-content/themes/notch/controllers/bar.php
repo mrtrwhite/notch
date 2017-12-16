@@ -1,3 +1,6 @@
 <?php
 
-echo 'FooBar!';
+echo json_encode(array(
+    'status' => 200,
+    'message' => 'Foobar!'
+));

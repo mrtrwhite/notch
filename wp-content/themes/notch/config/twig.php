@@ -1,15 +1,8 @@
 <?php
 
-/**
- * Convert a hex colour to rgb.
- *
- * @param $hex
- * @param $opacity
+/*
+ * ==== TWIG EXTENSIONS ====
  */
-function hextorgb($hex, $opacity = 1) {
-	$rgb = join(',', sscanf($hex, "#%02x%02x%02x"));
-    return "rgba({$rgb},{$opacity})";
-}
 
 /**
  * Register twig filters.
@@ -18,6 +11,8 @@ function hextorgb($hex, $opacity = 1) {
  */
 function twig_filters($twig) {
 	$twig->addFilter('hextorgb', new Twig_Filter_Function('hextorgb'));
+	$twig->addFunction(new Timber\Twig_Function('url', 'url'));
+	$twig->addFunction(new Timber\Twig_Function('env', 'env'));
 	return $twig;
 }
 add_filter('get_twig', 'twig_filters');

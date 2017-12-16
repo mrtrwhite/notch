@@ -33,6 +33,6 @@ $theme = function($args, $assoc_args) {
 
     recurse_copy($starter_theme_dir, $theme_dir);
 
-    WP_CLI::success("Theme {$args[0]} created.");
+    WP_CLI::success("Theme '{$args[0]}' created.");
 };
 WP_CLI::add_command('notch theme', $theme);

@@ -2,7 +2,10 @@
   "name": "notch",
   "version": "0.1.0",
   "description": "Notch build scripts.",
-  "dependencies": {},
+  "dependencies": {
+    "blazy": "^1.8.2",
+    "jquery": "^3.2.1",
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * ==== THEME POST TYPES ====
+ * Duplicate this block, replacing '[NAME]' with your post type name.
+ */
+
 function register_post_types() {
     $labels = array(
 	   'name'               => _x( '[NAME]', 'post type general name', 'your-plugin-textdomain' ),

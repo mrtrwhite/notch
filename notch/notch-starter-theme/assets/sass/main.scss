@@ -1,5 +1,5 @@
-@import 'tailwind.scss';
+$blue: blue;
 
 body {
-    @apply .bg-black .text-white .w-full;
+    color: $blue;
 }

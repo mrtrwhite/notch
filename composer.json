@@ -23,7 +23,8 @@
 		"wpackagist-plugin/timber-library": "*",
         "vlucas/phpdotenv": "^2.4",
         "symfony/process": "^3.3",
-        "robmorgan/phinx": "^0.9.1"
+        "robmorgan/phinx": "^0.9.1",
+        "tightenco/collect": "^5.5"
     },
     "extra" : {
         "wordpress-install-dir": "wp"
