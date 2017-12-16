@@ -1,6 +1,4 @@
 color: true
 require:
-  - cli/migrate.php
-  - cli/serve.php
-  - cli/build.php
-  - cli/notch.php
+  - notch/migrate.php
+  - notch/notch.php

@@ -28,7 +28,7 @@ module.exports = {
         rules: [
             {
                 test: /\.s[ac]ss$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.js$/,
@@ -55,7 +55,8 @@ module.exports = {
             }
         },
         inline: true,
-        hot: true
+        hot: true,
+        quiet: true
     },
     plugins: [
         new webpack.ProvidePlugin({
