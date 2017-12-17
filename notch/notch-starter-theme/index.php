@@ -6,7 +6,7 @@ $d['post'] = Timber::get_post();
 
 $templates = array('page.twig');
 
-if (is_home()) {
+if(is_home()) {
     array_unshift($templates, 'home.twig');
 }
 

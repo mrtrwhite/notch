@@ -2,6 +2,9 @@ if (module.hot) {
     module.hot.accept();
 }
 
-import foo from './foo.js';
+import Blazy from 'blazy'
 
-foo.bar();
+import FooBar from './foobar'
+
+let bLazy = new Blazy(),
+    foobar = new FooBar();

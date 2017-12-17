@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Notch | A WordPress project</title>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="{{ theme.link ~ '/inc/css/app.css' }}">
     </head>
     <body class="{{ body_class }}">
-        {% block content %}{% endblock %}
+        <main>{% block content %}{% endblock %}</main>
         <script type="text/javascript" src="{{ theme.link ~ '/inc/js/bundle.js' }}"></script>
     </body>
 </html>
