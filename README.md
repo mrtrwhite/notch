@@ -1,4 +1,4 @@
-#Notch
+# Notch
 ### A WordPress boilerplate.
 
 1) Run `composer install`.
